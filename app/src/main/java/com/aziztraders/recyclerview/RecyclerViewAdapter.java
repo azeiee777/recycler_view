@@ -9,11 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
-    String[] data;
+    private List<User> data;
 
-    public RecyclerViewAdapter(String[] data) {
+    public RecyclerViewAdapter(List<User> data) {
         this.data = data;
     }
 
@@ -28,12 +30,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.txvTitle.setText(data[position]);
+        holder.txvTitle.setText(data.get(position).getText());
+        holder.img.setImageResource(data.get(position).getImg());
     }
 
     @Override
     public int getItemCount() {
-        return data.length;
+        return data.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
