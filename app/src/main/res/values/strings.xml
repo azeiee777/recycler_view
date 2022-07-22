@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="image_description">image</string>
+    <string name="sample_text">Hello word!</string>
+</resources>
